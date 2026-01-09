@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chealwin Winstons | Precision & Vision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;700;900&display=swap');
+        
+        :root {
+            --safety-orange: #ff5722;
+            --industrial-blue: #0f172a;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+        }
+
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+
+        .photo-card {
+            aspect-ratio: 4/5;
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .photo-card:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .blueprint-bg {
+            background-image: 
+                linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+                linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .strikethrough {
+            position: relative;
+            display: inline-block;
+        }
+
+        .strikethrough::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 2px;
+            background: var(--safety-orange);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .group:hover .strikethrough::after {
+            transform: scaleX(1);
+        }
+
+        .lang-active {
+            @apply text-slate-900 border-b-2 border-orange-500;
+        }
+
+        .metric-card {
+            border-left: 1px solid #e2e8f0;
+            padding-left: 2rem;
+        }
+    </style>
+</head>
+<body class="text-slate-900">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-slate-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-8">
+                <span class="font-black text-xl tracking-tighter">C.WINSTONS</span>
+                <div class="hidden md:flex space-x-4 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                    <button onclick="switchLang('en')" id="btn-en" class="lang-active pb-1">EN</button>
+                    <button onclick="switchLang('zh')" id="btn-zh" class="pb-1 hover:text-slate-900">ZH</button>
+                    <button onclick="switchLang('it')" id="btn-it" class="pb-1 hover:text-slate-900">IT</button>
+                    <button onclick="switchLang('de')" id="btn-de" class="pb-1 hover:text-slate-900">DE</button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-6 text-xs font-bold uppercase tracking-widest">
+                <a href="#work" class="group"><span class="strikethrough" data-t="nav-exp">Experience</span></a>
+                <a href="#gallery" class="group"><span class="strikethrough" data-t="nav-gallery">Archive</span></a>
+                <a href="#contact" class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-orange-500 transition-colors" data-t="nav-contact">Inquiry</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center px-6 blueprint-bg">
+        <div class="max-w-7xl mx-auto w-full pt-20">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8">
+                    <h1 class="text-[clamp(3rem,10vw,8rem)] font-black leading-[0.85] tracking-tighter heading-font uppercase">
+                        Precision<br>
+                        <span class="text-orange-500">&</span> Vision.
+                    </h1>
+                </div>
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="border-l-4 border-slate-900 pl-6">
+                        <p class="text-slate-500 text-lg leading-relaxed" data-t="hero-sub">
+                            Bridging the gap between industrial CNC manufacturing and high-fidelity visual storytelling.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="h-px w-12 bg-slate-300"></div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Taichung, Taiwan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Pillars -->
+    <section class="py-24 border-y border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="metric-card">
+                    <span class="text-[10px] font-bold text-orange-500 uppercase tracking-widest block mb-4">Metric 01</span>
+                    <h3 class="text-3xl font-black heading-font uppercase mb-4" data-t="pillar-1-t">Technical Precision</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed" data-t="pillar-1-d">Operating with sub-millimeter accuracy in CNC processing, ensuring every component meets global industrial standards.</p>
+                </div>
+                <div class="metric-card">
+                    <span class="text-[10px] font-bold text-orange-500 uppercase tracking-widest block mb-4">Metric 02</span>
+                    <h3 class="text-3xl font-black heading-font uppercase mb-4" data-t="pillar-2-t">Digital Synergy</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed" data-t="pillar-2-d">Leveraging an IT Engineering background to troubleshoot hardware and optimize production workflows in high-pressure environments.</p>
+                </div>
+                <div class="metric-card">
+                    <span class="text-[10px] font-bold text-orange-500 uppercase tracking-widest block mb-4">Metric 03</span>
+                    <h3 class="text-3xl font-black heading-font uppercase mb-4" data-t="pillar-3-t">Visual Narrative</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed" data-t="pillar-3-d">Award-winning cinematography and photography that captures the soul of craftsmanship and architectural geometry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Gallery: BTS THEME -->
+    <section id="gallery" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-orange-500 mb-2" data-t="gallery-tag">Visual Archive</h2>
+                    <p class="text-4xl font-black heading-font" data-t="nav-gallery">Behind The Scenes</p>
+                </div>
+                <div class="text-right hidden md:block">
+                    <p class="text-slate-400 text-sm italic" data-t="award-1-t">1st Runner Up - Buddhist Short Movie Award 2020</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-8">
+                    <!-- IMAGE: Camera setup/Lens -->
+                    <div class="photo-card rounded-2xl group relative overflow-hidden shadow-2xl" style="background-image: url('https://images.unsplash.com/photo-1492691523567-62742551480b?q=80&w=800')">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-[10px] font-bold uppercase tracking-widest border border-white/30 px-4 py-2 rounded-full">On Set View</span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100">
+                        <h4 class="font-bold uppercase text-xs mb-2">Cinematography BTS</h4>
+                        <p class="text-slate-500 text-xs">A look into the technical setup, lighting angles, and hardware required for 2020 award-winning short film.</p>
+                    </div>
+                </div>
+                <div class="md:mt-12 space-y-8">
+                    <!-- IMAGE: Set lighting/Production -->
+                    <div class="photo-card rounded-2xl group relative overflow-hidden shadow-2xl" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=800')">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i data-lucide="video" class="text-white h-10 w-10"></i>
+                        </div>
+                    </div>
+                    <!-- IMAGE: Director monitor/Detail -->
+                    <div class="photo-card rounded-2xl group relative overflow-hidden shadow-2xl" style="background-image: url('https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?q=80&w=800')"></div>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-slate-900 text-white p-8 rounded-2xl flex flex-col justify-between aspect-square">
+                        <i data-lucide="clapperboard" class="h-12 w-12 text-orange-500"></i>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Production</h3>
+                            <p class="text-slate-400 text-sm">Managing the workflow from machine floor to movie set—where precision meets creativity.</p>
+                        </div>
+                    </div>
+                    <!-- IMAGE: Film Crew / High End Gear -->
+                    <div class="photo-card rounded-2xl group relative overflow-hidden shadow-2xl" style="background-image: url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800')"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="work" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <div class="bg-orange-500 h-1 w-20 mb-8"></div>
+                    <h3 class="text-5xl font-black heading-font mb-6 uppercase">VP Component</h3>
+                    <p class="text-slate-400 font-bold mb-8 uppercase tracking-widest text-sm" data-t="exp-role">CNC Machine Operator</p>
+                    <p class="text-slate-500 text-lg leading-relaxed mb-10" data-t="exp-p">
+                        Operating at the highest tier of manufacturing. Responsible for the precision cutting and processing of high-end bicycle components for global markets.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-black text-xs uppercase mb-2">Technical</h5>
+                            <ul class="text-slate-400 text-xs space-y-2">
+                                <li class="flex items-center"><i data-lucide="check" class="h-3 w-3 mr-2 text-orange-500"></i> Machine Calibration</li>
+                                <li class="flex items-center"><i data-lucide="check" class="h-3 w-3 mr-2 text-orange-500"></i> Quality Control</li>
+                                <li class="flex items-center"><i data-lucide="check" class="h-3 w-3 mr-2 text-orange-500"></i> SOP Execution</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-black text-xs uppercase mb-2">Systems</h5>
+                            <ul class="text-slate-400 text-xs space-y-2">
+                                <li class="flex items-center"><i data-lucide="check" class="h-3 w-3 mr-2 text-orange-500"></i> IT Engineering</li>
+                                <li class="flex items-center"><i data-lucide="check" class="h-3 w-3 mr-2 text-orange-500"></i> Troubleshooting</li>
+                                <li class="flex items-center"><i data-lucide="check" class="h-3 w-3 mr-2 text-orange-500"></i> Automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 border border-slate-200 rounded-full animate-pulse"></div>
+                    <div class="bg-slate-100 p-2 rounded-3xl">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800" class="rounded-2xl grayscale" alt="CNC Process">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="py-32 px-6 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
+            <div class="max-w-md">
+                <h2 class="text-4xl font-black heading-font mb-6 uppercase" data-t="contact-title">Let's Build Something Together</h2>
+                <p class="text-slate-500 mb-8" data-t="contact-p">Currently available for technical industrial roles or creative photography commissions.</p>
+                <div class="space-y-4">
+                    <a href="mailto:Wnstns@gmail.com" class="flex items-center space-x-4 text-xl font-bold group">
+                        <div class="bg-slate-100 p-3 rounded-full group-hover:bg-orange-500 group-hover:text-white transition-all"><i data-lucide="mail"></i></div>
+                        <span>Wnstns@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-12 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <div>
+                    <p class="text-slate-900 mb-4">Location</p>
+                    <p>Taiping District</p>
+                    <p>420 Taichung City</p>
+                </div>
+                <div>
+                    <p class="text-slate-900 mb-4">Social</p>
+                    <p class="hover:text-orange-500 cursor-pointer">Instagram</p>
+                    <p class="hover:text-orange-500 cursor-pointer">LinkedIn</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-32 pt-12 border-t border-slate-100 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-slate-300">
+            <p>&copy; 2024 CHEALWIN WINSTONS</p>
+            <p data-t="footer">Excellence in Precision</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                "nav-exp": "Experience", "nav-gallery": "Archive", "nav-contact": "Inquiry",
+                "hero-sub": "Bridging the gap between industrial CNC manufacturing and high-fidelity visual storytelling.",
+                "pillar-1-t": "Technical Precision", "pillar-1-d": "Operating with sub-millimeter accuracy in CNC processing, ensuring every component meets global industrial standards.",
+                "pillar-2-t": "Digital Synergy", "pillar-2-d": "Leveraging an IT Engineering background to troubleshoot hardware and optimize production workflows in high-pressure environments.",
+                "pillar-3-t": "Visual Narrative", "pillar-3-d": "Award-winning cinematography and photography that captures the soul of craftsmanship and architectural geometry.",
+                "gallery-tag": "Visual Archive", "award-1-t": "1st Runner Up - Buddhist Short Movie Award 2020",
+                "exp-role": "CNC Machine Operator", "exp-p": "Operating at the highest tier of manufacturing. Responsible for the precision cutting and processing of high-end bicycle components.",
+                "contact-title": "Let's Build Something Together", "contact-p": "Currently available for technical industrial roles or creative photography commissions.",
+                "footer": "Excellence in Precision"
+            },
+            zh: {
+                "nav-exp": "專業經歷", "nav-gallery": "視覺存檔", "nav-contact": "諮詢",
+                "hero-sub": "彌合工業 CNC 製造與高保真視覺敘事之間的鴻溝。",
+                "pillar-1-t": "技術精準度", "pillar-1-d": "在 CNC 加工中以亞毫米級的精度運作，確保每個組件都符合全球工業標準。",
+                "pillar-2-t": "數位協同", "pillar-2-d": "利用 IT 工程背景在壓力環境中排除硬體故障並優化生產流程。",
+                "pillar-3-t": "視覺敘事", "pillar-3-d": "獲獎的電影攝影和攝影作品，捕捉工藝靈魂與建築幾何之美。",
+                "gallery-tag": "視覺作品集", "award-1-t": "2020 年佛教短片獎亞軍",
+                "exp-role": "CNC 機器操作員", "exp-p": "在製造業的最前沿運作。負責全球高端自行車零件的精密切割與加工。",
+                "contact-title": "讓我們一起創造", "contact-p": "目前可接受技術工業職位或創意攝影委託。",
+                "footer": "追求精準卓越"
+            },
+            it: {
+                "nav-exp": "Esperienza", "nav-gallery": "Archivio", "nav-contact": "Contatti",
+                "hero-sub": "Unire il divario tra la produzione industriale CNC e lo storytelling visivo ad alta fedeltà.",
+                "pillar-1-t": "Precisione Tecnica", "pillar-1-d": "Operare con precisione sub-millimetrica nella lavorazione CNC, garantendo standard industriali globali.",
+                "pillar-2-t": "Sinergia Digitale", "pillar-2-d": "Utilizzo del background in ingegneria IT per ottimizzare i flussi di produzione in ambienti ad alta pressione.",
+                "pillar-3-t": "Narrativa Visiva", "pillar-3-d": "Cinematografia e fotografia pluripremiate che catturano l'anima dell'artigianato.",
+                "gallery-tag": "Archivio Visivo", "award-1-t": "Secondo Posto - Buddhist Short Movie Award 2020",
+                "exp-role": "Operatore Macchine CNC", "exp-p": "Operare al più alto livello della produzione. Responsabile del taglio e della lavorazione di precisione.",
+                "contact-title": "Costruiamo Insieme", "contact-p": "Disponibile per ruoli industriali tecnici o commissioni fotografiche.",
+                "footer": "Eccellenza nella Precisione"
+            },
+            de: {
+                "nav-exp": "Erfahrung", "nav-gallery": "Archiv", "nav-contact": "Anfrage",
+                "hero-sub": "Die Brücke zwischen industrieller CNC-Fertigung und High-Fidelity-Visual-Storytelling.",
+                "pillar-1-t": "Technische Präzision", "pillar-1-d": "Arbeiten mit Sub-Millimeter-Genauigkeit in der CNC-Bearbeitung unter Einhaltung globaler Industriestandards.",
+                "pillar-2-t": "Digitale Synergie", "pillar-2-d": "Nutzung des IT-Engineering-Hintergrunds zur Fehlerbehebung und Optimierung von Produktionsabläufen.",
+                "pillar-3-t": "Visuelle Erzählung", "pillar-3-d": "Preisgekrönte Kinematografie und Fotografie, die die Seele der Handwerkskunst einfängt.",
+                "gallery-tag": "Visuelles Archiv", "award-1-t": "2. Platz - Buddhist Short Movie Award 2020",
+                "exp-role": "CNC-Maschinenbediener", "exp-p": "Arbeiten auf höchstem Fertigungsniveau. Verantwortlich für den Präzisionsschnitt von Fahrradkomponenten.",
+                "contact-title": "Lass uns zusammenarbeiten", "contact-p": "Verfügbar für technische Aufgaben oder Fotografie-Aufträge.",
+                "footer": "Exzellenz in Präzision"
+            }
+        };
+
+        window.onload = function() {
+            lucide.createIcons();
+
+            window.switchLang = function(lang) {
+                document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('lang-active'));
+                document.getElementById(`btn-${lang}`).classList.add('lang-active');
+
+                const data = translations[lang];
+                document.querySelectorAll('[data-t]').forEach(el => {
+                    const key = el.getAttribute('data-t');
+                    if (data[key]) el.innerText = data[key];
+                });
+            }
+        };
+    </script>
+</body>
+</html>
